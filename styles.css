@@ -1,0 +1,152 @@
+body{
+    margin:0;
+    height: 100%;
+    width: 100%;
+
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+/* HEADER */
+
+#header{
+    box-sizing: border-box;
+
+    height: 10vh;
+    min-height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: black;
+
+    gap: 10px;
+}
+
+#logos{
+    display: flex;
+    width: 20%;
+    min-width: 70px;
+}
+
+.logo{
+    height:100%;
+    aspect-ratio: 2/1;
+}
+
+.short-logo{
+    align-self: center;
+    display: none;
+    height: 80%;
+    aspect-ratio: 1/1;
+}
+
+
+.quick-links{
+    padding: 0;
+    font-weight: bold;
+    margin-right: 30px;
+
+    box-sizing: border-box;
+
+    min-width: 30%;
+    width: 60%;
+    max-width: 300px;
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 5px;
+    list-style: none;
+}
+
+.quick-links>*{
+    align-self: center;
+}
+
+.quick-links a{
+    color:white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quick-links a:hover{
+    color: rgb(158, 154, 154);
+}
+
+@media (max-width: 450px){
+    .logo{
+        display: none;
+    }
+    .short-logo{
+        display: block;
+    }
+    .quick-links{
+        flex:1;
+        margin-right: 5px;
+        padding:0;
+    }
+}
+
+
+/* FOOTER */
+
+#footer{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.social-links{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+.social-links li{
+    list-style: none;
+}
+
+.social-links img{
+    height: 40px;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+
+.social-links a:hover{
+    background-color: rgb(89, 85, 85);
+}
+
+.social-links a{
+    text-decoration: none;
+    display: flex;
+
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#logo-text{
+    color:white;
+    align-self: center;
+
+}
+
+@media (max-width: 500px){
+    #logo-text{
+        display: none;
+    }
+}
+
+
+
+
