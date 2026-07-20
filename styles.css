@@ -170,6 +170,10 @@ body{
     transform: translate(-50%,-50%);
 }
 
+.back-group{
+    transform: translate(-50%, -50%);
+}
+
 .camera{
     width:75px;
     height: 75px;
@@ -179,8 +183,7 @@ body{
 
     display: flex;
     align-items: center;
-    justify-content: center-around;
-    gap:8px;
+    justify-content: space-around;
     transform: translate(-90%, -150%);
 
     padding-left: 6.5px;
@@ -188,7 +191,6 @@ body{
 }
 
 .lens{
-    border: 1px solid red;
     width: 23px;
     height:23px;
     border-radius: 50%;
@@ -201,6 +203,23 @@ body{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-right: -3px;
+}
+
+.hero-title{
+    margin-top: 56px;
+    text-align: center;
+    max-width: 420px;
+    padding: 0 24px;
+    opacity: 0;
+    color: #ffff;
+}
+
+.hero-title h2{
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin:0;
 }
 
 /* FOOTER */
