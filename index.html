@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="sarTech.ico">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <link rel="stylesheet" href="styles.css">
-
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -23,31 +23,55 @@
         </ul>
     </div>
     <div id="body">
+        <section class="explode-section">
+            <div class="stage">
+
+                <div class="phone-stage" id="phoneStage"> <!-- ids use camelCase, classes use kebab-case -->
+                    <div class="display layer" id="back"></div>
+                    <div class="board layer id = " board"></div>
+                    <div class="battery layer" id="battery"></div>
+                    <div class = "back layer" id = "back">
+                        <div class="camera layer" id="camera">
+                            <div class="main-row">
+                                <span class="lens"></span>
+                                <span class="lens"></span>
+                            </div>
+                            <span class="lens sub-row"></span>
+                        </div>
+                        <div class="glass layer" id="display"></div>
+                    </div>
+                </div>
+
+                <div class="hero-title" id="heroTitle">
+                    <h2>Noi sappiamo cosa c'è dentro.</h2>
+                </div>
+            </div>
+        </section>
     </div>
     <div id="footer">
-        <ul class = "social-links">
+        <ul class="social-links">
             <li>
-                <a href = "https://www.instagram.com/gabriele.sarria" target="_blank">
+                <a href="https://www.instagram.com/gabriele.sarria" target="_blank">
                     <img src="img/footer icons/instagram.png">
-                    <div id = "logo-text">Instagram</div>
+                    <div id="logo-text">Instagram</div>
                 </a>
             </li>
             <li>
                 <a href="https://wa.me/393510541065" target="_blank">
                     <img src="img/footer icons/whatsapp.png">
-                    <div id = "logo-text">Whatsapp</div>
+                    <div id="logo-text">Whatsapp</div>
                 </a>
             </li>
             <li>
-                <a href="mailto:gabrielesarria167@gmail.com" target="_blank">
+                <a href="mailto:gabrielesarria167@gmail.com">
                     <img src="img/footer icons/gmail.png">
-                   <div id = "logo-text">Gmail</div>
+                    <div id="logo-text">Gmail</div>
                 </a>
             </li>
             <li>
-                <a href = "https://github.com/gabrielesarria167-ai" target="_parent">
-                    <img src = "img/footer icons/github.png">
-                   <div id = "logo-text">GitHub</div>
+                <a href="https://github.com/gabrielesarria167-ai" target="_parent">
+                    <img src="img/footer icons/github.png">
+                    <div id="logo-text">GitHub</div>
                 </a>
             </li>
         </ul>
