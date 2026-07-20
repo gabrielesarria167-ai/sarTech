@@ -52,3 +52,23 @@ window.addEventListener(`resize`, () =>{ update(); updateScale();});
 
 update();
 updateScale();
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) =>{
+    entries.forEach((entry) =>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+
+});
+
+revealElements.forEach((element) => revealObserver.observe(element));
+
+const reservationButton = document.querySelector("#reservation");
+
+reservationButton.addEventListener("click", () =>{
+    location.href = "pages/assistenza.html";
+})

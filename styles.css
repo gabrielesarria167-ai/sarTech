@@ -95,6 +95,8 @@ body{
 
 /* MAIN BODY */
 
+/* PHONE ANIMATION SECTION */
+
 .explode-section{
     position: relative; /* relative pretty much makes the element able to overlap other elements*/
     height: 300vh;
@@ -111,7 +113,7 @@ body{
     justify-content: center; /* aligns along y axis */
 
     overflow: hidden;
-    background: radial-gradient(circle at 50% 40%, #201f1f, #0a0a0c 60%); /* creates a radial gradient */ 
+    background: radial-gradient(circle at 50% 40%, #2d2c2c, #030303 60%); /* creates a radial gradient */ 
 }
 
 .phone-stage{
@@ -216,10 +218,111 @@ body{
 }
 
 .hero-title h2{
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: -.01em;
     margin:0;
+}
+
+/* INTRODUCTION SECTION */
+
+.introduction-section{
+    background-color: #010101;
+    padding: 0px 24px 50px 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap:120px;
+}
+
+.chunk1, .chunk2, .chunk3{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.chunk1 p, .chunk2 p, .chunk3 p{
+    color:white;
+    flex:1;
+    min-width: 240px;
+    max-width:400px;
+    font-size: 30px;
+    line-height: 1.6;
+}
+
+.chunk1 img, .chunk2 img, .chunk3 img{
+    flex:1;
+    min-width: 240px;
+    max-width: 400px;
+    width:100%;
+    border-radius: 10px;
+}
+
+.reservation-button{
+    background: rgb(236, 232, 232);
+    border: none;
+    max-width: 310px;
+    min-width: 240px;
+    align-self: center;
+    height: 50px;
+    padding: 0 32px;
+    border-radius: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+    font-weight: bold;
+    font-size: large;
+    cursor:pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.reservation-button:hover{
+    background-color: rgba(215, 212, 212, 0.88);
+}
+
+/* SCROLL ANIMATION */
+
+.reservation-button.reveal{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reservation-button.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal > *{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible > *{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.visible > *:nth-child(2){ transition-delay: 0.12s;}
+.reveal.visible > *:nth-child(3){ transition-delay: 0.24s;}
+.reveal.visible > *:nth-child(4){transition-delay: 0.36s;}
+
+@media (prefers-reduced-motion: reduce){
+    reveal > *{
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* FOOTER */
@@ -278,3 +381,4 @@ body{
         display: none;
     }
 }
+
