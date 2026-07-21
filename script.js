@@ -58,3 +58,11 @@ const revealObserver = new IntersectionObserver((entries) =>{
 });
 
 revealElements.forEach((element) => revealObserver.observe(element));
+
+const logos = document.querySelector("#logos").childNodes;
+
+logos.forEach((logo) =>{
+    logo.addEventListener("click", () =>{
+        location.href = "../index.html";
+    })
+});
