@@ -333,7 +333,7 @@ body{
 .reveal.visible > *:nth-child(4){transition-delay: 0.36s;}
 
 @media (prefers-reduced-motion: reduce){
-    reveal > *{
+    .reveal > *, .reservation-button.reveal{
         transition: none;
         opacity: 1;
         transform: none;
@@ -385,14 +385,14 @@ body{
     border-radius: 10px;
 }
 
-#logo-text{
+.logo-text{
     color:white;
     align-self: center;
 
 }
 
 @media (max-width: 500px){
-    #logo-text{
+    .logo-text{
         display: none;
     }
 }
