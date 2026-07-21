@@ -3,7 +3,7 @@
 
 Questo sito servirà per aiutarmi a gestire i futuri clienti, organizzando le loro richieste in ordine, e offrendo loro un piacere visivo e un senso di professionalità. Inoltre, servirà come elemento da aggiungere nel mio curriculum.
 
-Il progetto offrirà ai clienti una possibilità di velocemente selezionare da remoto il problema del loro dispositivo elettronico, così da poter ricevere assistenza velocemente via mail/whatsapp.
+Il progetto offrirà ai clienti una possibilità di velocemente selezionare da remoto il problema del loro dispositivo elettronico, così da poter organizzare e ricevere assistenza velocemente via mail/whatsapp.
 
 L'interfaccia deve seguire uno schema simile:
 

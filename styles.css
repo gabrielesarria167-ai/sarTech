@@ -12,7 +12,7 @@ body{
 
 /* HEADER */
 
-#introductionPage #header{
+ #header{
     box-sizing: border-box;
 
     height: 10vh;
@@ -26,18 +26,18 @@ body{
     gap: 10px;
 }
 
-#introductionPage #logos{
+ #logos{
     display: flex;
     width: 20%;
     min-width: 70px;
 }
 
-#introductionPage .logo{
+.logo{
     height:100%;
     aspect-ratio: 2/1;
 }
 
-#introductionPage .short-logo{
+ .short-logo{
     align-self: center;
     display: none;
     height: 80%;
@@ -45,7 +45,7 @@ body{
 }
 
 
-#introductionPage .quick-links{
+.quick-links{
     padding: 0;
     font-weight: bold;
     margin-right: 30px;
@@ -65,19 +65,24 @@ body{
     list-style: none;
 }
 
-#introductionPage .quick-links>*{
+.quick-links>*{
     align-self: center;
 }
 
-#introductionPage .quick-links a{
+ .quick-links a{
     color:white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-#introductionPage .quick-links a:hover{
+ .quick-links a:hover{
     color: rgb(158, 154, 154);
 }
+
+#assistenza .quick-links{
+    justify-content: space-evenly;
+}
+
 
 @media (max-width: 450px){
     .logo{
