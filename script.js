@@ -46,7 +46,13 @@ function update(){
 }
 
 function updateScale(){
-    const scale = clamp(window.innerWidth / 480, 0.55,1);
+    let scale;
+    if(window.innerWidth / 480){
+        scale = clamp(window.innerWidth / 480, 0.55, 1);
+    }
+    else{
+        scale = clamp(1 + (window.innerWidth - 480) / 4800, 1, 1.25);
+    }
     phoneStage.style.transform = `scale(${scale.toFixed(2)})`;
 }
 
