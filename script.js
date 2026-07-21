@@ -6,6 +6,8 @@ const battery = document.querySelector("#battery");
 const backGroup = document.querySelector("#backGroup");
 const heroTitle = document.querySelector("#heroTitle");
 
+const heroWelcome = document.querySelector("#heroWelcome");
+
 function clamp(value, min, max){
     return Math.max(min, Math.min(max, value));
 }
@@ -40,6 +42,7 @@ function update(){
     const positionTitle = remap(position, 0.85, 1.00);
     heroTitle.style.opacity = positionTitle;
     heroTitle.style.transform = `translateY(${16 * (1-positionTitle)}px)`;
+    heroWelcome.style.opacity = clamp(1-position*6, 0, 1);
 }
 
 function updateScale(){
