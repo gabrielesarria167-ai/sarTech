@@ -6,9 +6,47 @@ body{
     margin:0;
     height: 100%;
     width: 100%;
+    color:white;
 
     font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, sans-serif;
 }
+
+/* NAV BAR */
+
+.directory-help{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+}
+
+.directory-help a, .crumb-link{
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgba(255,255,255,.55);
+    font:inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.directory-help a:hover{
+    color: #ffff
+}
+
+.crumb-sep{
+    color: rgba(255,255,255,.3);
+}
+
+.crump-current{
+    color: #ffff;
+    font-weight: 600;
+}
+
+
 
 /* HEADER */
 
