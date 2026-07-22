@@ -37,7 +37,7 @@ function update(){
 
 function updateScale(){
     let scale;
-    if(window.innerWidth / 480){
+    if(window.innerWidth < 480){
         scale = clamp(window.innerWidth / 480, 0.55, 1);
     }
     else{
@@ -66,3 +66,28 @@ logos.forEach((logo) =>{
         location.href = "../index.html";
     })
 });
+
+function renderPageBreadcrumb(){
+    const directoryHelp = document.querySelector("#directoryHelp");
+    if(!directoryHelp) return;
+
+    directoryHelp.innerHTML = "";
+
+    const home = document.createElement("a");
+    home.href = "../index.html";
+    home.textContent = "Home";
+    directoryHelp.appendChild(home);
+
+    const sep = document.createElement("span");
+    sep.className = "crumb-sep";
+    sep.textContent = ">";
+    directoryHelp.appendChild(sep);
+
+    const current = document.createElement("span");
+    current.style.cursor = "pointer";
+    current.className = "crumb-current";
+    current.textContent = document.title;
+    directoryHelp.appendChild(current);
+}
+
+renderPageBreadcrumb();
