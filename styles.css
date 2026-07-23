@@ -41,7 +41,7 @@ body{
     color: rgba(255,255,255,.3);
 }
 
-.crump-current{
+.crumb-current{
     color: #ffff;
     font-weight: 600;
 }
@@ -68,6 +68,7 @@ body{
     display: flex;
     width: 20%;
     min-width: 70px;
+    cursor: pointer;
 }
 
 .logo{
@@ -117,7 +118,7 @@ body{
     color: rgb(158, 154, 154);
 }
 
-#assistenza .quick-links{
+#assistenza .quick-links, #chi-siamo .quick-links, #contattaci .quick-links{
     justify-content: space-evenly;
 }
 
@@ -441,3 +442,131 @@ body{
     }
 }
 
+
+
+
+
+/* ASSISTANCE PAGE */
+
+#assistenza .body{
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+}
+
+#assistenza .hero-content{
+    display: flex;
+    flex-direction: column;
+}
+
+#assistenza .hero-title{
+    font-size: clamp(28px, 8vw, 50px);
+    letter-spacing: -.01em;
+    margin-bottom: -5px;
+}
+
+#assistenza .hero-sub{
+    font-size: clamp(13px, 3vw, 25px);
+    letter-spacing: -.01em;
+    font-weight: 600;
+}
+
+/* MODEL SELECION */
+
+.picker-row{
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.picker-toggle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:3px;
+    background:none;
+    border:none;
+    color:#ffff;
+    font: inherit;
+    font-size: 16px;
+    padding: 16px 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.picker-toggle .label-toggle{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.picker-toggle:hover:not(:disabled){
+    color:rgb(195, 197, 202);
+}
+
+.picker-toggle:disabled{
+    color: rgba(255, 255, 255, 0.505);
+    cursor:auto;
+}
+
+.toggle-chevron{
+    transition: transform 0.2s ease;
+}
+
+.picker-toggle[aria-expanded="true"] .toggle-chevron{
+    transform: rotate(90deg);
+}
+
+.option-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 4px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.option-list[hidden]{
+    display: none;
+}
+
+.option-row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 44px;
+    background: none;
+    border:none;
+    color:#ffff;
+    font: inherit;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.4s ease;
+}
+
+.option-row:hover{
+    background: rgba(179, 181, 185, 0.6);
+}
+
+.option-icon{
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-monogram{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}

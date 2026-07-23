@@ -23,7 +23,6 @@ const deviceCatalog = {
                 "iPhone 11 Pro Max", "iPhone 11 Pro", "iPhone 11",
                 "iPhone XS Max", "iPhone XS", "iPhone XR",
                 "iPhone X", "iPhone 8 Plus", "iPhone 8",
-                
             ],
 
             "Samsung": [
@@ -53,7 +52,6 @@ const deviceCatalog = {
                 "Galaxy A57 (2026)", "Galaxy A56 (2025)", "Galaxy A55 (2024)", "Galaxy A54 (2023)",
                 "Galaxy A53 (2022)", "Galaxy A52 (2021)", "Galaxy A51 (2020)", "Galaxy A50 (2019)",
                 "Galaxy A8 (2018)", "Galaxy A5 (2017)",
-                
             ],
 
             "Google": [
@@ -67,7 +65,6 @@ const deviceCatalog = {
                 "Pixel 4 XL", "Pixel 4", "Pixel 3a XL", "Pixel 3a",
                 "Pixel 3 XL", "Pixel 3",
                 "Pixel 2 XL", "Pixel 2",
-                
             ],
 
             "Xiaomi": [
@@ -81,7 +78,6 @@ const deviceCatalog = {
                 "Mi 9T Pro", "Mi 9",
                 "Mi 8 Pro", "Mi 8", "Mi Mix 3",
                 "Mi 6", "Mi Mix 2",
-                
             ],
 
             "Redmi": [
@@ -98,7 +94,6 @@ const deviceCatalog = {
                 "Redmi Note 4",
                 "Redmi K70 Pro", "Redmi K60",
                 "Redmi 13 5G", "Redmi 12", "Redmi 10", "Redmi 9",
-                
             ],
 
             "Realme": [
@@ -112,7 +107,6 @@ const deviceCatalog = {
                 "Realme 13 Pro", "Realme 12 Pro", "Realme 11 Pro",
                 "Realme 10", "Realme 9", "Realme 8", "Realme 7", "Realme 6",
                 "Realme 5", "Realme 3", "Realme 1",
-                
             ],
 
             "Motorola": [
@@ -134,7 +128,6 @@ const deviceCatalog = {
                 "Moto G77 (2026)", "Moto G96 (2025)", "Moto G85 (2024)", "Moto G84 (2023)",
                 "Moto G82 (2022)", "Moto G100 (2021)", "Moto G9 Plus (2020)",
                 "Moto G7 Plus (2019)", "Moto G6 Plus (2018)", "Moto G5S Plus (2017)",
-                
             ],
 
             "Huawei": [
@@ -160,10 +153,8 @@ const deviceCatalog = {
                 // Serie Nova — un modello rappresentativo per anno
                 "Nova 13 (2025)", "Nova 12 Pro (2024)", "Nova 11 Pro (2023)", "Nova 10 Pro (2022)",
                 "Nova 9 (2021)", "Nova 7 (2020)", "Nova 5T (2019)", "Nova 3 (2018)", "Nova 2 (2017)",
-                
             ],
 
-            "Altra marca": []
         }
     },
 
@@ -190,7 +181,6 @@ const deviceCatalog = {
                 "iPad 8ª gen. (2020)", "iPad 7ª gen. (2019)", "iPad 6ª gen. (2018)", "iPad 5ª gen. (2017)",
                 // iPad mini
                 "iPad mini 7 (2024)", "iPad mini 6 (2021)", "iPad mini 5 (2019)",
-                
             ],
 
             "Samsung": [
@@ -209,7 +199,6 @@ const deviceCatalog = {
                 "Tab A9+ 11\" (2023)", "Tab A9 8.7\" (2023)",
                 "Tab A8 10.5\" (2021)", "Tab A7 10.4\" (2020)",
                 "Tab A 10.5\" (2018)", "Tab A 8.0\" (2017)",
-                
             ],
 
             "Xiaomi": [
@@ -217,7 +206,6 @@ const deviceCatalog = {
                 "Xiaomi Pad 6S Pro (2024)", "Xiaomi Pad 6 Pro (2023)", "Xiaomi Pad 6 (2023)",
                 "Xiaomi Pad 5 Pro (2021)", "Xiaomi Pad 5 (2021)",
                 "Redmi Pad Pro (2024)", "Redmi Pad SE (2023)", "Redmi Pad (2022)",
-                
             ],
 
             "Huawei": [
@@ -226,16 +214,13 @@ const deviceCatalog = {
                 "MatePad 11.5\" S (2024)", "MatePad 11.5\" (2023)", "MatePad 11 (2023)",
                 "MatePad Air (2023)", "MatePad 11 (2021)", "MatePad (2022)", "MatePad (2020)",
                 "MatePad SE (2022)",
-                
             ],
 
             "Lenovo": [
                 "Tab P12 (2023)", "Tab P11 (2022)",
                 "Tab M10 (2022)", "Tab M9 (2023)", "Yoga Tab 13 (2022)",
-                
             ],
 
-            "Altra marca": []
         }
     },
 
@@ -275,7 +260,6 @@ const deviceCatalog = {
                 // Mac Studio
                 "Mac Studio M5 Max (2026)", "Mac Studio M4 Max/M3 Ultra (2025)",
                 "Mac Studio M2 Max/M2 Ultra (2023)", "Mac Studio M1 Max/M1 Ultra (2022)",
-                
             ],
 
             "Samsung": [
@@ -289,12 +273,13 @@ const deviceCatalog = {
 
             // Marchi Windows: qui elenco le LINEE di prodotto, non modello+anno —
             // un cliente sa dire "è un HP Pavilion", raramente sa dire l'anno o il chip esatto.
-            "Dell": ["XPS", "Inspiron", "Latitude", "Vostro", "Alienware", ],
-            "HP": ["Pavilion", "EliteBook", "ProBook", "Spectre", "Envy", "Omen", "ZBook", ],
-            "Lenovo": ["ThinkPad", "IdeaPad", "Legion", "Yoga", "LOQ", ],
-            "Asus": ["ZenBook", "VivoBook", "ROG", "TUF Gaming", "ExpertBook", ],
-            "Acer": ["Aspire", "Swift", "Predator", "Nitro", "TravelMate", ],
-            "Microsoft": ["Surface Laptop", "Surface Pro", "Surface Go", "Surface Laptop Studio", ],
+            "Dell": ["XPS", "Inspiron", "Latitude", "Vostro", "Alienware"],
+            "HP": ["Pavilion", "EliteBook", "ProBook", "Spectre", "Envy", "Omen", "ZBook"],
+            "Lenovo": ["ThinkPad", "IdeaPad", "Legion", "Yoga", "LOQ"],
+            "Asus": ["ZenBook", "VivoBook", "ROG", "TUF Gaming", "ExpertBook"],
+            "Acer": ["Aspire", "Swift", "Predator", "Nitro", "TravelMate"],
+            "Microsoft": ["Surface Laptop", "Surface Pro", "Surface Go", "Surface Laptop Studio"],
+
         }
     }
 };

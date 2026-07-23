@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="it">
+
+<html lang = "it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistenza</title>
-    <link rel = "stylesheet" href = "../styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="../sarTech.ico">
-    <script src = "../script.js" defer></script>
-    <script src = "../scripts/assistenza.js" defer></script>
+    <script src="../script.js" defer></script>
+    <script src="../scripts/devices.js" defer></script>
+    <script src="../scripts/assistenza.js" defer></script>
 
 </head>
-<body id = "assistenza">
-     <div id="header">
+
+<body id="assistenza">
+    <div id="header">
         <div id="logos">
             <img src="../img/sarTech.png" class="logo">
             <img src="../img/sarTech-short.png" class="short-logo">
@@ -21,8 +25,43 @@
             <li><a href="pages/contattaci.html">Contattaci</a></li>
         </ul>
     </div>
-    <section >
+    <section class="body">
+        <nav class="directory-help" id="directoryHelp" aria-label="Percorso di navigazione"></nav>
 
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">Assistenza</h1>
+            <p class="hero-sub" id="herosubTitle">Organizza la tua riparazione con noi.</p>
+        </div>
+
+        <div class="device-picker" id="devicePicker">
+
+            <div class="picker-row">
+                <button class="picker-toggle" id="typeToggle" aria-expanded="false" aria-controls="typeList">
+                    <span class="label-toggle" id="typeLabel">Seleziona il tipo di dispositivo </span>
+                    <span class="toggle-chevron">></span>
+                </button>
+                <div class="option-list" id="typeList" hidden></div>
+            </div>
+            <div class="picker-row">
+                <button class="picker-toggle" id="brandToggle" aria-expanded="false" aria-controls="brandList" disabled>
+                    <span class="label-toggle" id="brandLabel">Seleziona la marca del dispositivo </span>
+                    <span class="toggle-chevron">></span>
+
+                </button>
+                <div class="option-list" id="brandList" hidden></div>
+            </div>
+            <div class="picker-row">
+                <button class="picker-toggle" id="modelToggle" aria-expanded="false" aria-controls="modelList" disabled>
+                    <span class="label-toggle" id="modelLabel">Seleziona il modello del dispositivo </span>
+                    <span class="toggle-chevron">></span>
+                </button>
+                <div class="option-list" id="modelList" hidden></div>
+            </div>
+
+            <button class="device-confirm" id="confirm" disabled>Conferma</button>
+
+        </div>
     </section>
 </body>
+
 </html>
