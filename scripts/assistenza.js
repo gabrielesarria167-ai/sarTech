@@ -22,6 +22,22 @@ const rows = {
     },
 };
 
+const brandLogos ={
+    Apple:"../img/brand logos/apple.png",
+    Samsung:"../img/brand logos/samsung.png",
+    Microsoft:"../img/brand logos/microsoft.png",
+    Dell:"../img/brand logos/dell.png",
+    HP:"../img/brand logos/hp.png",
+    Asus:"../img/brand logos/asus.png",
+    Acer:"../img/brand logos/acer.png",
+    Lenovo:"../img/brand logos/lenovo.png",
+    Google:"../img/brand logos/google.png",
+    Huawei:"../img/brand logos/huawei.png",
+    Motorola:"../img/brand logos/motorola.png",
+    Realme:"../img/brand logos/realme.png",
+    Xiaomi:"../img/brand logos/xiaomi.png",
+}
+
 const devicePicker = document.querySelector("#devicePicker");
 const confirmButton = document.querySelector("#confirm");
 
@@ -54,7 +70,15 @@ function createOptionRow(label, iconSVG, onSelect){
 
     const iconWrap = document.createElement("span");
     iconWrap.className = "option-icon";
-    (iconSVG)? (iconWrap.innerHTML = iconSVG): iconWrap.appendChild(createMonogram(label));
+   
+    if(brandLogos[label]){
+        const img = document.createElement("img");
+        img.src = brandLogos[label];
+        img.alt = "";
+        iconWrap.appendChild(img)
+    }
+    else if(iconSVG) iconWrap.innerHTML=iconSVG;
+    else iconWrap.appendChild(createMonogram(label))
 
     const name = document.createElement("span");
     name.className = "option-name";

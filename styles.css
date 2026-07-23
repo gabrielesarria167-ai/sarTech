@@ -555,12 +555,19 @@ body{
 }
 
 .option-icon{
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.option-icon img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .option-monogram{
