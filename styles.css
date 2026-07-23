@@ -348,7 +348,7 @@ body{
     margin-top: 20px;
 }
 
-#introductionPage .reservation-button:hover, #assistenza .device-confirm[enabled]:hover{
+#introductionPage .reservation-button:hover, #assistenza .device-confirm:enabled:hover{
     background-color: rgba(215, 212, 212, 0.88);
 }
 
