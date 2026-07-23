@@ -78,9 +78,6 @@ const deviceCatalog = {
                 "Mi 9T Pro", "Mi 9",
                 "Mi 8 Pro", "Mi 8", "Mi Mix 3",
                 "Mi 6", "Mi Mix 2",
-            ],
-
-            "Redmi": [
                 "Redmi Note 15 Pro", "Redmi Note 15",
                 "Redmi Note 14 Pro+", "Redmi Note 14 Pro", "Redmi Note 14",
                 "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 13",
