@@ -322,7 +322,7 @@ body{
     border-radius: 10px;
 }
 
-#introductionPage .reservation-button{
+#introductionPage .reservation-button, #assistenza .device-confirm{
     background: rgb(236, 232, 232);
     border: none;
     max-width: 310px;
@@ -344,7 +344,11 @@ body{
     transition: background-color 0.3s ease;
 }
 
-#introductionPage .reservation-button:hover{
+#assistenza .device-confirm{
+    margin-top: 20px;
+}
+
+#introductionPage .reservation-button:hover, #assistenza .device-confirm[enabled]:hover{
     background-color: rgba(215, 212, 212, 0.88);
 }
 
