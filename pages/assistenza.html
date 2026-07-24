@@ -89,7 +89,10 @@
                     </div>
                     <div class="field-group">
                         <label for="inputPhone">Telefono</label>
-                        <input type="tel" id="inputPhone" placeholder="..." autocomplete="tel" inputmode="tel" value="+39 ">
+                        <div class = "phone-input-wrap">
+                            <span class = "phone-prefix">+39</span>
+                            <input type="tel" id="inputPhone" autocomplete="tel" inputmode="numeric" maxlength="10">
+                        </div>
                     </div>
                 </div>
             </div>

@@ -236,9 +236,13 @@ personalToggle.addEventListener("click", ()=>{
 });
 
 function isValidPhone(value){
-    const cleaned = value.replace(/[\s-]/g, "");
-    return /^\+39\d{10}$/.test(cleaned);
+    return /^\d{10}$/.test(value);
 }
+
+inputPhone.addEventListener("input", ()=>{
+    inputPhone.value = inputPhone.value.replace(/\D/g,"").slice(0,10);
+    updatePersonalInfo();
+});
 
 function updatePersonalInfo(){
     const name = inputName.value.trim();
@@ -247,12 +251,12 @@ function updatePersonalInfo(){
 
     personalInfo.name = name.length > 0? name:null;
     personalInfo.surname = surname.length > 0? surname:null;
-    personalInfo.phone = isValidPhone(phone)? phone:null;
+    personalInfo.phone = isValidPhone(phone)? `+39${phone}`:null;
 
     updateConfirmState();
 }
 
-[inputName, inputSurname, inputPhone].forEach((input) =>{
+[inputName, inputSurname].forEach((input) =>{
     input.addEventListener("input", updatePersonalInfo);
 });
 
