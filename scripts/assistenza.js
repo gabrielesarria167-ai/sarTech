@@ -41,11 +41,28 @@ const brandLogos ={
 const devicePicker = document.querySelector("#devicePicker");
 const confirmButton = document.querySelector("#confirm");
 
+const deviceSummaryRow = document.querySelector("#deviceSummaryRow");
+const deviceSummaryToggle = document.querySelector("#deviceSummaryToggle");
+const deviceSummaryLabel = document.querySelector("#deviceSummaryLabel");
+const deviceDetailRows = document.querySelector("#deviceDetailRows");
+
+const personalToggle = document.querySelector("#personalToggle");
+const personalFields = document.querySelector("#personalFields");
+const inputName = document.querySelector("#inputName");
+const inputSurname = document.querySelector("#inputSurname");
+const inputPhone = document.querySelector("#inputPhone");
+
 const selection = {
     type: null,
     brand: null,
     model: null
 };
+
+const personalInfo ={
+    name: null,
+    surname: null,
+    phone: null
+}
 
 function monogramColor(label){
     let hash = 0;
@@ -164,20 +181,105 @@ function chooseModel(model){
     rows.model.label.textContent = model;
     closeAllRows();
     updateConfirmState();
+
+    if(selection.type && selection.brand && selection.model) showDeviceSummary();
 }
 
+function animateIn(el){
+    el.classList.remove("reveal-in");
+    void el.offsetWidth;
+    el.classList.add("reveal-in");
+}
+
+function showDeviceSummary(){
+    deviceSummaryLabel.textContent = "Selezione dispositivo";
+    deviceSummaryRow.hidden = false;
+    animateIn(deviceSummaryRow);
+
+    deviceDetailRows.hidden = true;
+    deviceSummaryToggle.setAttribute("aria-expanded", "false")
+
+    personalToggle.disabled = false;
+    openPersonalFields();
+}
+
+function toggleDeviceDetail(){
+    const isOpen = !deviceDetailRows.hidden;
+    if(isOpen){
+        deviceDetailRows.hidden = true;
+        deviceSummaryToggle.setAttribute("aria-expanded", "false")
+    }
+    else{
+        deviceDetailRows.hidden = false;
+        deviceSummaryToggle.setAttribute("aria-expanded","true");
+        animateIn(deviceDetailRows);
+        closePersonalFields()
+    }
+}
+
+function openPersonalFields(){
+    personalFields.hidden = false;
+    personalToggle.setAttribute("aria-expanded", "true");
+    animateIn(personalToggle.closest(".picker-row"));
+}
+
+function closePersonalFields(){
+    personalFields.hidden=true;
+    personalToggle.setAttribute("aria-expanded", "false");
+}
+
+deviceSummaryToggle.addEventListener("click", toggleDeviceDetail);
+
+personalToggle.addEventListener("click", ()=>{
+    if(personalToggle.disabled) return;
+    personalFields.hidden? openPersonalFields(): closePersonalFields();
+});
+
+function isValidPhone(value){
+    const cleaned = value.replace(/[\s-]/g, "");
+    return /^\+39\d{10}$/.test(cleaned);
+}
+
+function updatePersonalInfo(){
+    const name = inputName.value.trim();
+    const surname = inputSurname.value.trim();
+    const phone = inputPhone.value.trim();
+
+    personalInfo.name = name.length > 0? name:null;
+    personalInfo.surname = surname.length > 0? surname:null;
+    personalInfo.phone = isValidPhone(phone)? phone:null;
+
+    updateConfirmState();
+}
+
+[inputName, inputSurname, inputPhone].forEach((input) =>{
+    input.addEventListener("input", updatePersonalInfo);
+});
+
 function updateConfirmState(){
-    confirmButton.disabled = !(selection.type && selection.brand && selection.model);
+    const deviceComplete = selection.type && selection.brand && selection.model;
+    const personalComplete = personalInfo.name && personalInfo.surname && personalInfo.phone;
+    confirmButton.disabled = !(deviceComplete && personalComplete);
 }
 
 Object.keys(rows).forEach((key) =>rows[key].toggle.addEventListener("click",() => toggleRow(key)));
 
 document.addEventListener("click", (event) =>{
-    if(!devicePicker.contains(event.target)) closeAllRows();
+    if(!devicePicker.contains(event.target)){
+        closeAllRows();
+        if(!personalFields.hidden) closePersonalFields();
+    }
 });
 
 confirmButton.addEventListener("click", () =>{
-    const richiesta = { tipo: selection.type, marca: selection.brand, modello: selection.model };
+    const richiesta = { 
+        tipo: selection.type, 
+        marca: selection.brand, 
+        modello: selection.model,
+        nome: personalInfo.name,
+        cognome: personalInfo.surname,
+        telefono: personalInfo.phone
+    };
     console.log("Dispositivo selezionato:", richiesta);
 });
 

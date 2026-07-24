@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang = "it">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -35,27 +35,63 @@
 
         <div class="device-picker" id="devicePicker">
 
-            <div class="picker-row">
-                <button class="picker-toggle" id="typeToggle" aria-expanded="false" aria-controls="typeList">
-                    <span class="label-toggle" id="typeLabel">Seleziona il tipo di dispositivo </span>
+            <div class="picker-row" id="deviceSummaryRow">
+                <button class="picker-toggle" id="deviceSummaryToggle" aria-expanded="false"
+                    aria-controls="deviceDetailRows">
+                    <span class="label-toggle" id="deviceSummaryLabel">Selezione dispositivo </span>
                     <span class="toggle-chevron">></span>
                 </button>
-                <div class="option-list" id="typeList" hidden></div>
             </div>
-            <div class="picker-row">
-                <button class="picker-toggle" id="brandToggle" aria-expanded="false" aria-controls="brandList" disabled>
-                    <span class="label-toggle" id="brandLabel">Seleziona la marca del dispositivo </span>
-                    <span class="toggle-chevron">></span>
 
-                </button>
-                <div class="option-list" id="brandList" hidden></div>
+            <div id="deviceDetailRows" hidden>
+                <div class="picker-row">
+                    <button class="picker-toggle" id="typeToggle" aria-expanded="false" aria-controls="typeList">
+                        <span class="label-toggle" id="typeLabel">Seleziona il tipo di dispositivo </span>
+                        <span class="toggle-chevron">></span>
+                    </button>
+                    <div class="option-list" id="typeList" hidden></div>
+                </div>
+                <div class="picker-row">
+                    <button class="picker-toggle" id="brandToggle" aria-expanded="false" aria-controls="brandList"
+                        disabled>
+                        <span class="label-toggle" id="brandLabel">Seleziona la marca del dispositivo </span>
+                        <span class="toggle-chevron">></span>
+
+                    </button>
+                    <div class="option-list" id="brandList" hidden></div>
+                </div>
+                <div class="picker-row">
+                    <button class="picker-toggle" id="modelToggle" aria-expanded="false" aria-controls="modelList"
+                        disabled>
+                        <span class="label-toggle" id="modelLabel">Seleziona il modello del dispositivo </span>
+                        <span class="toggle-chevron">></span>
+                    </button>
+                    <div class="option-list" id="modelList" hidden></div>
+                </div>
             </div>
+
             <div class="picker-row">
-                <button class="picker-toggle" id="modelToggle" aria-expanded="false" aria-controls="modelList" disabled>
-                    <span class="label-toggle" id="modelLabel">Seleziona il modello del dispositivo </span>
+                <button class="picker-toggle" id="personalToggle" aria-expanded="false" aria-controls="personalFields"
+                    disabled>
+                    <span class="label-toggle" id="peronalLabel">Informazioni personali </span>
                     <span class="toggle-chevron">></span>
                 </button>
-                <div class="option-list" id="modelList" hidden></div>
+
+                <div class="personal-fields" id="personalFields" hidden>
+                    <div class="field-group">
+                        <label for="inputName">Nome</label>
+                        <input type="text" id="inputName" placeholder="..." autocomplete="given-name">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="inputSurname">Cognome</label>
+                        <input type="text" id="inputSurname" placeholder="..." autocomplete="family-name">
+                    </div>
+                    <div class="field-group">
+                        <label for="inputPhone">Telefono</label>
+                        <input type="tel" id="inputPhone" placeholder="..." autocomplete="tel" inputmode="tel" value="+39 ">
+                    </div>
+                </div>
             </div>
 
             <button class="device-confirm" id="confirm" disabled>Conferma</button>
