@@ -212,7 +212,7 @@ function toggleDeviceDetail(){
     else{
         deviceDetailRows.hidden = false;
         deviceSummaryToggle.setAttribute("aria-expanded","true");
-        animateIn(deviceDetailRows);
+        deviceDetailRows.querySelectorAll(".picker-row").forEach(animateIn)
         closePersonalFields()
     }
 }
