@@ -18,4 +18,4 @@ const reservationButton = document.querySelector("#reservation");
 
 reservationButton.addEventListener("click", () =>{
     location.href = "pages/assistenza.html";
-})
+});
