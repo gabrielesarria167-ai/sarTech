@@ -275,16 +275,41 @@ document.addEventListener("click", (event) =>{
     }
 });
 
-confirmButton.addEventListener("click", () =>{
+const successPanel = document.querySelector("#successPanel")
+const successCode = document.querySelector("#successCode");
+
+confirmButton.addEventListener("click", async () =>{
     const richiesta = { 
-        tipo: selection.type, 
-        marca: selection.brand, 
-        modello: selection.model,
-        nome: personalInfo.name,
-        cognome: personalInfo.surname,
-        telefono: personalInfo.phone
+        device_type: selection.type, 
+        brand: selection.brand, 
+        model: selection.model,
+        name: personalInfo.name,
+        surname: personalInfo.surname,
+        phone: personalInfo.phone
     };
-    console.log("Dispositivo selezionato:", richiesta);
+
+    confirmButton.disabled = true
+    confirmButton.textContent = "Invio in corso..";
+
+    try{
+        const response = await fetch("http://localhost:3001/api/requests",{
+            method: "POST",
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify(richiesta)
+        });
+
+        if(!response.ok) throw new Error("Errore del server");
+        const result = await response.json();
+
+        confirmButton.hidden = true;
+        successCode.textContent = result.id;
+        successPanel.hidden = false;
+        successPanel.classList.add("animate");
+    } catch(error){
+        console.error(error);
+        confirmButton.textContent = "Si è verificato un errore, riprovare.";
+        confirmButton.disabled = false;
+    }
 });
 
 renderTypeOptions();

@@ -350,7 +350,10 @@ body{
     min-width: 170px;
     font-size: medium;
     height: 40px;
+}
 
+#assistenza .device-confirm[hidden]{
+    display: 0;
 }
 
 #introductionPage .reservation-button:hover, #assistenza .device-confirm:enabled:hover{
@@ -682,4 +685,69 @@ body{
 
 .phone-input-wrap input:focus{
     border-color: transparent;
+}
+
+/* REQUEST SUCCESS CHECK */
+
+.success-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 24px 0;
+}
+
+.success-panel[hidden]{
+    display: none;
+}
+
+.checkmark{
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+}
+
+.checkmark-circle{
+    stroke: rgb(26, 132, 40);
+    stroke-width: 2;
+    stroke-dasharray: 170;
+    stroke-dashoffset: 170;
+}
+
+.checkmark-check{
+    stroke: rgb(83, 180, 96);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+}
+
+.success-panel.animate .checkmark-circle{
+    animation: draw-circle 0.5s ease forwards;
+}
+
+.success-panel.animate .checkmark-check{
+    animation: draw-check 0.35s 0.45s ease forwards;
+}
+
+@keyframes draw-circle{
+    to{stroke-dashoffset: 0;}
+}
+
+@keyframes draw-check{
+    to{stroke-dashoffset: 0;}
+}
+
+.success-title{
+    font-size: 18px;
+    font-weight: 600;
+    color:#ffff;
+    margin: 4px 0 0;
+}
+
+.success-code{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.731)
 }
