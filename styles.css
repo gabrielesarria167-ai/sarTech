@@ -353,7 +353,7 @@ body{
 }
 
 #assistenza .device-confirm[hidden]{
-    display: 0;
+    display: none;
 }
 
 #introductionPage .reservation-button:hover, #assistenza .device-confirm:enabled:hover{
@@ -389,7 +389,9 @@ body{
 .reveal.visible > *:nth-child(4){transition-delay: 0.36s;}
 
 @media (prefers-reduced-motion: reduce){
-    .reveal > *, .reservation-button.reveal, .reveal-in{
+    .reveal > *, .reservation-button.reveal, .reveal-in,
+    .checkmark-circle, .checkmark-check, .error-circle,
+    .error-stem, .error-dot, .loading-dots span{
         transition: none;
         animation: none;
         opacity: 1;
@@ -708,11 +710,18 @@ body{
     margin-bottom: 8px;
 }
 
-.checkmark-circle{
-    stroke: rgb(26, 132, 40);
+.checkmark-circle, .error-circle{
     stroke-width: 2;
     stroke-dasharray: 170;
     stroke-dashoffset: 170;
+}
+
+.checkmark-circle{
+    stroke: rgb(26, 132, 40);
+}
+
+.error-circle{
+    stroke: rgba(171, 35, 35, 0.819);
 }
 
 .checkmark-check{
@@ -750,4 +759,100 @@ body{
 .success-code{
     font-size: 14px;
     color: rgba(255, 255, 255, 0.731)
+}
+
+/* REQUEST LOADING */
+
+.loading-dots{
+    display: flex;
+    align-items: center;
+    gap:5px;
+}
+
+.loading-dots[hidden]{
+    display: none;
+}
+
+.loading-dots span{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: dot-bounce 1s ease-in-out infinite;
+}
+.loading-dots span:nth-child(2){animation-delay: 0.15s;}
+.loading-dots span:nth-child(3){animation-delay: 0.3s;}
+
+
+@keyframes dot-bounce{
+    0%, 60%, 100%{transform: translateY(0); opacity: 0.5;}
+    30%{transform: translateY(-6px); opacity: 1;}
+}
+
+/* REQUEST ERROR SIGN */
+
+.error-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 24px 0;
+}
+
+.error-panel[hidden]{
+    display: none;
+}
+
+.error-mark{
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+}
+
+.error-stem{
+    stroke:rgb(204, 49, 49);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+}
+
+.error-dot{
+    fill: rgb(204,49,49);
+    transform-origin: 26px 37px;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.error-panel.animate .error-circle{
+    animation: draw-circle 0.5s ease forwards;
+}
+
+.error-panel.animate .error-stem{
+    animation: draw-stem 0.2s 0.45s ease forwards;
+}
+
+.error-panel.animate .error-dot{
+    animation: pop-dot 0.2s 0.45s ease forwards;
+}
+
+@keyframes draw-stem{
+    to{stroke-dashoffset: 0;}
+}
+
+@keyframes pop-dot{
+    to{transform: scale(1); opacity: 1;}
+}
+
+.error-title{
+    font-size: 18px;
+    font-weight: 600;
+    color:white;
+    margin: 4px 0 0;
+}
+
+.error-message{
+    font-size: 14px;
+    color: rgba(255,255,255,0.731)
 }

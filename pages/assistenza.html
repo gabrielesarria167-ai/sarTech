@@ -35,7 +35,7 @@
 
         <div class="device-picker" id="devicePicker">
 
-            <div class="picker-row" id="deviceSummaryRow">
+            <div class="picker-row" id="deviceSummaryRow" hidden>
                 <button class="picker-toggle" id="deviceSummaryToggle" aria-expanded="false"
                     aria-controls="deviceDetailRows">
                     <span class="label-toggle" id="deviceSummaryLabel">Selezione dispositivo </span>
@@ -43,13 +43,13 @@
                 </button>
             </div>
 
-            <div id="deviceDetailRows" hidden>
+            <div id="deviceDetailRows" >
                 <div class="picker-row">
                     <button class="picker-toggle" id="typeToggle" aria-expanded="false" aria-controls="typeList">
                         <span class="label-toggle" id="typeLabel">Seleziona il tipo di dispositivo </span>
                         <span class="toggle-chevron">></span>
                     </button>
-                    <div class="option-list" id="typeList" hidden></div>
+                    <div class="option-list reveal-in" id="typeList" hidden></div>
                 </div>
                 <div class="picker-row">
                     <button class="picker-toggle" id="brandToggle" aria-expanded="false" aria-controls="brandList"
@@ -58,7 +58,7 @@
                         <span class="toggle-chevron">></span>
 
                     </button>
-                    <div class="option-list" id="brandList" hidden></div>
+                    <div class="option-list reveal-in" id="brandList" hidden></div>
                 </div>
                 <div class="picker-row">
                     <button class="picker-toggle" id="modelToggle" aria-expanded="false" aria-controls="modelList"
@@ -66,7 +66,7 @@
                         <span class="label-toggle" id="modelLabel">Seleziona il modello del dispositivo </span>
                         <span class="toggle-chevron">></span>
                     </button>
-                    <div class="option-list" id="modelList" hidden></div>
+                    <div class="option-list reveal-in" id="modelList" hidden></div>
                 </div>
             </div>
 
@@ -97,7 +97,12 @@
                 </div>
             </div>
 
-            <button class="device-confirm" id="confirm" disabled>Conferma</button>
+            <button class="device-confirm" id="confirm" disabled>
+                <span class = "confirm-label" id = "confirmLabel">Conferma</span>
+                <span class="loading-dots" id="loadingDots" hidden>
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
 
             <div class = "success-panel" id = "successPanel" hidden>
                 <svg class = "checkmark" viewBox="0 0 52 52" aria-hidden="true">
@@ -108,6 +113,17 @@
                 <p class = "success-code">ID richiesta: <strong id = "successCode"></strong> </p>
             </div>
 
+            <div class="error-panel" id="errorPanel" hidden>
+                <svg class="error-mark" viewBox="0 0 52 52" aria-hidden="true">
+                    <circle class="error-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <line class="error-stem" x1="26" y1="15" x2="26" y2="29"/>
+                    <circle class="error-dot" cx="26" cy="37" r="2"/>
+                    <line></line>
+                    <circle></circle>
+                </svg>
+                <p class="error-title">Si è verificato un errore</p>
+                <p class="error-message" id="errorMessage">Controlla la connessione e riprova.</p>
+            </div>
         </div>
     </section>
 </body>

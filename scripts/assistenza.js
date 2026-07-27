@@ -185,16 +185,15 @@ function chooseModel(model){
     if(selection.type && selection.brand && selection.model) showDeviceSummary();
 }
 
-function animateIn(el){
-    el.classList.remove("reveal-in");
+function animateIn(el, className="reveal-in"){
+    el.classList.remove(className);
     void el.offsetWidth;
-    el.classList.add("reveal-in");
+    el.classList.add(className);
 }
 
 function showDeviceSummary(){
     deviceSummaryLabel.textContent = "Selezione dispositivo";
     deviceSummaryRow.hidden = false;
-    animateIn(deviceSummaryRow);
 
     deviceDetailRows.hidden = true;
     deviceSummaryToggle.setAttribute("aria-expanded", "false")
@@ -277,6 +276,23 @@ document.addEventListener("click", (event) =>{
 
 const successPanel = document.querySelector("#successPanel")
 const successCode = document.querySelector("#successCode");
+const errorPanel = document.querySelector("#errorPanel");
+const errorMessage = document.querySelector("#errorMessage");
+const confirmLabel = document.querySelector("#confirmLabel");
+const loadingDots = document.querySelector("#loadingDots")
+
+function showLoading(){
+    errorPanel.hidden=true;
+    confirmLabel.hidden=true;
+    loadingDots.hidden=false;
+}
+
+function showError(message){
+    errorMessage.textContent=message;
+    errorPanel.hidden=false;
+    animateIn(errorPanel, "animate");
+}
+
 
 confirmButton.addEventListener("click", async () =>{
     const richiesta = { 
@@ -288,8 +304,8 @@ confirmButton.addEventListener("click", async () =>{
         phone: personalInfo.phone
     };
 
-    confirmButton.disabled = true
-    confirmButton.textContent = "Invio in corso..";
+    confirmButton.disabled = true;
+    showLoading();
 
     try{
         const response = await fetch("http://localhost:3001/api/requests",{
@@ -304,11 +320,13 @@ confirmButton.addEventListener("click", async () =>{
         confirmButton.hidden = true;
         successCode.textContent = result.id;
         successPanel.hidden = false;
-        successPanel.classList.add("animate");
+        animateIn(successPanel, "animate")
     } catch(error){
         console.error(error);
-        confirmButton.textContent = "Si è verificato un errore, riprovare.";
-        confirmButton.disabled = false;
+        confirmLabel.hidden=false;
+        loadingDots.hidden=true;
+        confirmButton.disabled=false;
+        showError("Controlla la connessione e riprova.")
     }
 });
 
