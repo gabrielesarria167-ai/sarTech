@@ -308,7 +308,7 @@ confirmButton.addEventListener("click", async () =>{
     showLoading();
 
     try{
-        const response = await fetch("http://localhost:3001/api/requests",{
+        const response = await fetch("https://sartech.onrender.com/api/requests",{
             method: "POST",
             headers: {"Content-type": "application/json"},
             body: JSON.stringify(richiesta)
