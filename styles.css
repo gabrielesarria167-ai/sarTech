@@ -110,7 +110,8 @@ body{
 
  .quick-links a{
     color:white;
-    text-decoration: none;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(138, 140, 140, 0.776);
     transition: color 0.3s ease;
 }
 
@@ -155,6 +156,7 @@ body{
     font-family: inherit;
     font-weight: 600;
 }
+
 
 .explode-section{
     position: relative; /* relative pretty much makes the element able to overlap other elements*/
@@ -362,17 +364,20 @@ body{
 
 /* SCROLL ANIMATION */
 
-#introductionPage .reservation-button.reveal{
+#introductionPage .reservation-button.reveal, #assistenza .device-confirm.reveal{
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-#introductionPage .reservation-button.reveal.visible{
+#introductionPage .reservation-button.reveal.visible, #assistenza .device-confirm.reveal.visible{
     opacity: 1;
     transform: translateY(0);
 }
 
+#assistenza .device-confirm.reveal.visible span{
+    transition: none;
+}
 .reveal > *{
     opacity: 0;
     transform: translateY(30px);
