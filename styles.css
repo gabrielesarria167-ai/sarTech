@@ -362,13 +362,13 @@ body{
 
 /* SCROLL ANIMATION */
 
-.reservation-button.reveal{
+#introductionPage .reservation-button.reveal{
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.reservation-button.reveal.visible{
+#introductionPage .reservation-button.reveal.visible{
     opacity: 1;
     transform: translateY(0);
 }
@@ -376,7 +376,7 @@ body{
 .reveal > *{
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.visible > *{
@@ -384,9 +384,12 @@ body{
     transform: translateY(0);
 }
 
-.reveal.visible > *:nth-child(2){ transition-delay: 0.12s;}
-.reveal.visible > *:nth-child(3){ transition-delay: 0.24s;}
-.reveal.visible > *:nth-child(4){transition-delay: 0.36s;}
+.reveal.visible > *:nth-child(2).visible.reveal{ transition-delay: 0.12s;}
+.reveal.visible > *:nth-child(3).visible.reveal{ transition-delay: 0.24s;}
+.reveal.visible > *:nth-child(4).visible.reveal{transition-delay: 0.36s;}
+.reveal.visible > *:nth-child(5).visible.reveal{transition-delay: 0.48s;}
+.reveal.visible > *:nth-child(6).visible.reveal{transition-delay: 0.60s;}
+.reveal.visible > *:nth-child(7).visible.reveal{transition-delay: 0.72s;}
 
 @media (prefers-reduced-motion: reduce){
     .reveal > *, .reservation-button.reveal, .reveal-in,
@@ -481,7 +484,7 @@ body{
 
 #assistenza .hero-sub, #chi-siamo .hero-sub{
     color: rgba(237, 230, 230, 0.885);
-    font-size: clamp(13px, 3vw, 25px);
+    font-size: clamp(15px, 3vw, 25px);
     letter-spacing: -.01em;
     font-weight: 600;
 }
@@ -856,4 +859,24 @@ body{
 .error-message{
     font-size: 14px;
     color: rgba(255,255,255,0.731)
+}
+
+/* CHI SIAMO PAGE */
+
+.body-chunks{
+    max-width: 700px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.body-chunks p{
+    text-align: left;
+    font-size: clamp(13px, 3vw, 20px);
+    line-height: 1.4;
+}
+
+.body-chunks[hidden]{
+    display: none;
 }
