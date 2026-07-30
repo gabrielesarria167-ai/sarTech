@@ -72,14 +72,8 @@ body{
 }
 
 .logo{
+    margin: 6px 15px;
     height:100%;
-    aspect-ratio: 2/1;
-}
-
- .short-logo{
-    align-self: center;
-    display: none;
-    height: 80%;
     aspect-ratio: 1/1;
 }
 
@@ -121,21 +115,6 @@ body{
 
 #assistenza .quick-links, #chi-siamo .quick-links, #contattaci .quick-links{
     justify-content: space-evenly;
-}
-
-
-@media (max-width: 450px){
-    .logo{
-        display: none;
-    }
-    .short-logo{
-        display: block;
-    }
-    .quick-links{
-        flex:1;
-        margin-right: 5px;
-        padding:0;
-    }
 }
 
 /* MAIN BODY */
