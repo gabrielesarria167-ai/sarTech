@@ -389,12 +389,12 @@ body{
     transform: translateY(0);
 }
 
-.reveal.visible > *:nth-child(2).visible.reveal{ transition-delay: 0.12s;}
-.reveal.visible > *:nth-child(3).visible.reveal{ transition-delay: 0.24s;}
-.reveal.visible > *:nth-child(4).visible.reveal{transition-delay: 0.36s;}
-.reveal.visible > *:nth-child(5).visible.reveal{transition-delay: 0.48s;}
-.reveal.visible > *:nth-child(6).visible.reveal{transition-delay: 0.60s;}
-.reveal.visible > *:nth-child(7).visible.reveal{transition-delay: 0.72s;}
+.reveal.visible > *:nth-child(2).visible.reveal{ transition-delay: 0.08s;}
+.reveal.visible > *:nth-child(3).visible.reveal{ transition-delay: 0.16s;}
+.reveal.visible > *:nth-child(4).visible.reveal{transition-delay: 0.24s;}
+.reveal.visible > *:nth-child(5).visible.reveal{transition-delay: 0.32s;}
+.reveal.visible > *:nth-child(6).visible.reveal{transition-delay: 0.40s;}
+.reveal.visible > *:nth-child(7).visible.reveal{transition-delay: 0.48s;}
 
 @media (prefers-reduced-motion: reduce){
     .reveal > *, .reservation-button.reveal, .reveal-in,
@@ -878,7 +878,7 @@ body{
 
 .body-chunks p{
     text-align: left;
-    font-size: clamp(13px, 3vw, 20px);
+    font-size: clamp(14px, 3.5vw, 20px);
     line-height: 1.4;
 }
 
