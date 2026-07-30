@@ -3,7 +3,7 @@
 const icons = {
     smartphone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>`,
     tablet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>`,
-    computer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><line x1="2" y1="19" x2="22" y2="19"/></svg>`
+    portatile: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><line x1="2" y1="19" x2="22" y2="19"/></svg>`
 };
 
 const deviceCatalog = {
@@ -280,8 +280,8 @@ const deviceCatalog = {
         }
     },
 
-    "Computer": {
-        icon: icons.computer,
+    "Portatile": {
+        icon: icons.portatile,
         brands: {
 
             "Apple": [
