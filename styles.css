@@ -232,6 +232,10 @@ body{
     box-sizing: border-box;
 }
 
+.camera[hidden]{
+    display: none;
+}
+
 .lens{
     width: 23px;
     height:23px;
