@@ -1,8 +1,10 @@
 const explodeSection = document.querySelector(".explode-section");
 const phoneStage = document.querySelector("#phoneStage");
+
 const display = document.querySelector("#display");
-const board = document.querySelector("#board");
+const motherboardWrap = document.querySelector("#motherboard-wrap");
 const battery = document.querySelector("#battery");
+const chassis=document.querySelector("#chassis");
 const backGroup = document.querySelector("#backGroup");
 const heroTitle = document.querySelector("#heroTitle");
 
@@ -15,19 +17,24 @@ function update(){
     
     // movement for back glass + camera
     const positionBack = remap(position, 0.00, 0.35);
-    backGroup.style.transform = `translate(calc(-50% - ${130 * positionBack}px), calc(-50% + ${50*positionBack}px)) rotate(${-8*positionBack}deg)`;
+    backGroup.style.transform = `translate(calc(-50% - ${120 * positionBack}px), calc(-50% + ${61*positionBack}px)) rotate(${-20*positionBack}deg)`;
 
     // movement for board
-    const positionBoard = remap(position, 0.28, 0.60);
-    board.style.transform = `translate(calc(-50% + ${10 * positionBoard}px), calc(-50% - ${70*positionBoard}px)) rotate(${3*positionBoard}deg)`;
+    const positionBoard = remap(position, 0.0, 0.80);
+    motherboardWrap.style.transform = `translate(${12 * positionBoard}px,${-250*positionBoard}px) rotate(${12*positionBoard}deg)`;
 
     // movement for battery
-    const positionBattery = remap(position, 0.33, 0.65);
-    battery.style.transform = `translate(calc(-35% + ${90 * positionBattery}px), calc(-50% + ${40*positionBattery}px)) rotate(${6*positionBattery}deg)`;
+    const positionBattery = remap(position, 0.0, 0.65);
+    battery.style.transform = `translate(${-140 * positionBattery}px,${-240*positionBattery}px) rotate(${-15*positionBattery}deg)`;
+
+    // movement for chassis
+
+    const positionChassis = remap(position, 0.0, 0.35);
+    chassis.style.transform = `translate(${10*positionChassis}px, ${50*positionChassis}px) rotate(${0*positionChassis}deg)`;
 
     // movement for display
-    const positionDisplay = remap(position, 0.65, 1.00);
-    display.style.transform = `translate(calc(-50% + ${140 * positionDisplay}px), calc(-50% - ${40*positionDisplay}px)) rotate(${9*positionDisplay}deg)`;
+    const positionDisplay = remap(position, 0.0, 0.35);
+    display.style.transform = `translate(${136 * positionDisplay}px, ${60*positionDisplay}px) rotate(${20*positionDisplay}deg)`;
 
     // hero title pops up after everything has finished moving
 

@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <script src = "scripts/index.js" defer></script>
+    <script src="scripts/index.js" defer></script>
 </head>
 
-<body id = "introductionPage">
+<body id="introductionPage">
     <div id="header">
         <div id="logos">
             <img src="img/sarTech.png" class="logo">
@@ -25,21 +25,290 @@
     <div id="body">
         <section class="explode-section">
             <div class="stage">
-                <div class = "hero-welcome" id = "heroWelcome">
+                <div class="hero-welcome" id="heroWelcome">
                     Respira, il tuo dispositivo è in buone mani.
                 </div>
+
                 <div class="phone-stage" id="phoneStage"> <!-- ids use camelCase, classes use kebab-case -->
-                    <div class="display layer" id="display"></div>
-                    <div class="board layer" id="board"></div>
-                    <div class="battery layer" id="battery"></div>
-                    <div class="back-group layer" id="backGroup">
-                        <div class="glass layer" id="glass"></div>
-                        <div class="camera layer" id="camera">
-                            <div class="main-row">
-                                <span class="lens"></span>
-                                <span class="lens"></span>
+
+                    <div class="phone">
+
+                        <svg id="display" viewBox="0 0 333 654" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="metallicBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#D1CCBF"></stop>
+                                    <stop offset="100%" stop-color="#A09E97"></stop>
+                                </linearGradient>
+                                <linearGradient id="heatBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#565552"></stop>
+                                    <stop offset="100%" stop-color="#444340"></stop>
+                                </linearGradient>
+                                <linearGradient id="flexCable" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#1D1D1B"></stop>
+                                    <stop offset="100%" stop-color="#222221"></stop>
+                                </linearGradient>
+                                <linearGradient id="goldenPin" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E4CF33"></stop>
+                                    <stop offset="100%" stop-color="#A48E24"></stop>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- display base -->
+
+                            <rect x="0" y="0" width="334" height="654" rx="58" fill="url(#metallicBase)"></rect>
+
+                            <rect x="22.5" y="200" width="290" height="380" rx="20" fill="url(#heatBase)"></rect>
+                            <rect x="112.5" y="140" width="200" height="80" rx="20" fill="url(#heatBase)"></rect>
+                            <rect x="212.5" y="100" width="100" height="60" rx="20" fill="url(#heatBase)"></rect>
+
+                            <!-- bottom flex cable-->
+
+                            <rect x="18" y="563" width="290" height="50" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="300" y="323" width="20" height="290" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="220" y="323" width="100" height="25" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="210" y="304" width="20" height="45" rx="5" fill="url(#metallicBase)"></rect>
+                            <ellipse cx="170.5" cy="600" rx="150" ry="36" fill="url(#flexCable)"></ellipse>
+
+                            <line x1="30" y1="630" x2="305" y2="630" stroke="#332B27" stroke-width="3"></line>
+                            <line x1="38" y1="635" x2="297" y2="635" stroke="#332B27" stroke-width="3"></line>
+
+                            <!-- golden pins on the bottom-->
+
+                            <circle cx="70" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="80" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="90" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="100" cy="585" r="3" fill="url(#goldenPin)"></circle>
+
+                            <circle cx="70" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="80" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="90" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="100" cy="595" r="3" fill="url(#goldenPin)"></circle>
+
+                            <circle cx="240" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="250" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="260" cy="585" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="270" cy="585" r="3" fill="url(#goldenPin)"></circle>
+
+                            <circle cx="240" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="250" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="260" cy="595" r="3" fill="url(#goldenPin)"></circle>
+                            <circle cx="270" cy="595" r="3" fill="url(#goldenPin)"></circle>
+
+                            <rect x="150" y="562" height="20" width="30" fill="url(#metallicBase)"></rect>
+
+                            <!-- proximity sensor and front camera holes -->
+
+                            <rect x="100" y="10" width="120" height="40" rx="10" fill="url(#heatBase)"></rect>
+                            <rect x="104" y="14" width="50" height="32" rx="10" fill="url(#metallicBase)"></rect>
+
+                            <circle cx="130" cy="30" r="10" fill="url(#metallicBase)" stroke="#2E240A" stroke-width="4"
+                                stroke-opacity="1"></circle>
+                            <circle cx="130" cy="30" r="15" fill="none" stroke="#2E240A" stroke-width="1"
+                                stroke-opacity="0.7"></circle>
+
+                            <circle cx="170" cy="30" r="10" fill="url(#metallicBase)" stroke="#2E240A" stroke-width="4"
+                                stroke-opacity="0.7"></circle>
+                            <circle cx="170" cy="30" r="14" fill="none" stroke="#D1CCBF" stroke-width="1"
+                                stroke-opacity="0.5"></circle>
+
+                            <!-- upper flex cable -->
+
+                            <rect x="250" y="13" width="60" height="60" rx="16" fill="url(#flexCable)"></rect>
+                            <rect x="270" y="55" width="14" height="40" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="180" y="82" width="103" height="14" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="180" y="82" width="14" height="40" rx="5" fill="url(#flexCable)"></rect>
+                            <rect x="176" y="112" width="20" height="16" rx="5" fill="url(#goldenPin)"></rect>
+
+                        </svg>
+
+                        <svg id="chassis" viewBox="8 8 333 654" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="metalCream" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#f5f2ea" />
+                                    <stop offset="35%" stop-color="#e6e2d6" />
+                                    <stop offset="55%" stop-color="#d8d3c4" />
+                                    <stop offset="75%" stop-color="#e9e5d9" />
+                                    <stop offset="100%" stop-color="#c9c4b3" />
+                                </linearGradient>
+
+
+                                <linearGradient id="blackMatte" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3a3c40" />
+                                    <stop offset="45%" stop-color="#1c1d20" />
+                                    <stop offset="100%" stop-color="#0a0a0b" />
+                                </linearGradient>
+
+                                <linearGradient id="blackSoft" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#26272b" />
+                                    <stop offset="100%" stop-color="#0d0e10" />
+                                </linearGradient>
+
+                                <mask id="seeThrough">
+                                    <rect width="333" height="654" fill="#ffffff"/>
+
+                                    <circle cx="60" cy="64" r="25" fill="#000000"></circle>
+                                    <circle cx="120" cy="94" r="25" fill="#000000"></circle>
+                                    <circle cx="60" cy="124" r="25" fill="#000000"></circle>
+
+                                    <rect x="105" y="130" width="30" height="24" rx="6" fill="#000000" />
+
+                                    <circle cx="180" cy="332" r="100" fill="#000000" />
+                                    <rect x="165" y="440" width="30" height="120" rx="10" fill="#000000"/>
+                                </mask>
+
+                            </defs>
+                            <ellipse cx="170" cy="640" rx="120" ry="14" fill="#000" opacity="0.10" />
+                            <g>
+
+                                <!-- inner frame-->
+                                <g mask="url(#seeThrough)">
+                                    <rect x="8" y="8" width="334" height="654" rx="58" fill="url(#blackMatte)" />
+                                    <rect x="22" y="22" width="306" height="626" rx="46" fill="url(#metalCream)" />
+                                    <rect x="22" y="22" width="306" height="626" rx="46" fill="url(#brushed)"
+                                        opacity="0.35" />
+                                </g>
+                                <rect x="22" y="22" width="306" height="626" rx="46" fill="none" stroke="#9a9686"
+                                    stroke-width="1" />
+
+                                <!-- earpiece speaker -->
+                                <rect x="146" y="30" width="48" height="10" rx="5" fill="#111214" />
+
+                                <!-- lens section -->
+                                <circle cx="60" cy="64" r="25" fill="none" stroke="#4b4d51" stroke-width="3" />
+                                <circle cx="120" cy="94" r="25" fill="none" stroke="#4b4d51" stroke-width="3" />
+                                <circle cx="60" cy="124" r="25" fill="none" stroke="#4b4d51" stroke-width="3" />
+                                <rect x="105" y="130" width="30" height="24" rx="6" fill="none" stroke="#4b4d51"
+                                    stroke-width="3" />
+
+                                <rect x="25" y="25" width="140" height="135" fill="none" stroke="#36454f"
+                                    stroke-opacity="0.2" stroke-width="4" rx="30"></rect>
+
+                                <!-- random board (drammatic effect) -->
+                                <rect x="256" y="128" width="20" height="44" rx="4" fill="url(#blackSoft)" />
+
+                                <!-- magsafe -->
+                                <circle cx="180" cy="332" r="100" fill="none" stroke="#a19c8c" stroke-width="2" />
+                                <circle cx="180" cy="332" r="100" fill="none" stroke="#000" stroke-opacity="0.06"
+                                    stroke-width="10" />
+
+                                <rect x="165" y="440" width="30" height="120" rx="10" fill="none" stroke="#a19c8c"
+                                    stroke-width="2">
+                                </rect>
+                                <rect x="160" y="437" width="40" height="126" fill="none" stroke="#000"
+                                    stroke-opacity="0.1" stroke-width="2" rx="15"></rect>
+
+                                <!-- screws -->
+                                <g fill="#5b574c">
+                                    <circle cx="306" cy="56" r="4.5" />
+                                    <circle cx="44" cy="624" r="4.5" />
+                                    <circle cx="306" cy="624" r="4.5" />
+                                    <circle cx="70" cy="370" r="4" />
+                                    <circle cx="290" cy="370" r="4" />
+                                    <circle cx="70" cy="590" r="4" />
+                                    <circle cx="290" cy="590" r="4" />
+                                </g>
+
+                            </g>
+                        </svg>
+
+                        <svg id="battery" viewBox="24 11 111 141" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="batteryBody-upper" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#25272b" />
+                                    <stop offset="1" stop-color="#151619" />
+                                </linearGradient>
+                                <linearGradient id="batteryBody-bottom" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#1c1e21" />
+                                    <stop offset="1" stop-color="#0e0f11" />
+                                </linearGradient>
+                            </defs>
+
+                            <rect x="24" y="11" width="60" height="100" rx="6" fill="url(#batteryBody-upper)" />
+                            <rect x="24" y="102" width="100" height="50" rx="9" fill="url(#batteryBody-bottom)" />
+
+                            <g id="battery-text"
+                                font-family="-apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif"
+                                fill="#dfe2e6">
+                                <text x="28" y="34" font-size="4">Li-Ion Polymer Battery</text>
+                                <text x="28" y="42" font-size="2.8" fill="#a7abb1">3.83V 4000 mAh 15.32 Wh</text>
+                                <line x1="28" y1="50" x2="81" y2="50" stroke="#a9c1"></line>
+
+                                <path d="M28,66 L31,59 L34,66 Z M31,62 L31,63.5 M31,64.7 L31,64.8" stroke="#a1afa4"
+                                    stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <text x="37" y="65" font-size="4" font-weight="500" fill="#a1afa4">Warning</text>
+
+                                <text x="28" y="74" font-size="2.8" fill="#a7abb1"> Do not disassemble, crush,
+                                    heat</text>
+                                <text x="28" y="80" font-size="2.8" fill="#a7abb1">puncture or burn.</text>
+                            </g>
+                        </svg>
+
+                        <div id="motherboard-wrap">
+                            <svg id="motherboard" viewBox="0 0 457.5 130" xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="m-base" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#115522" />
+                                        <stop offset="1" stop-color="#09110c" />
+                                    </linearGradient>
+                                    <linearGradient id="m-chipdark" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#2b2e32" />
+                                        <stop offset="1" stop-color="#16181b" />
+                                    </linearGradient>
+                                    <linearGradient id="m-chipwhite" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#f3efe0"></stop>
+                                        <stop offset="1" stop-color="#979896"></stop>
+                                    </linearGradient>
+                                    <linearGradient id="m-gold" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0" stop-color="#f0d9a3" />
+                                        <stop offset=".5" stop-color="#d8b570" />
+                                        <stop offset="1" stop-color="#a9824a" />
+                                    </linearGradient>
+                                </defs>
+
+                                <rect id="boardSurface" x="26" y="10" width="425.5" height="110" rx="14"
+                                    fill="url(#m-base)" stroke="#1e3226" stroke-width="1" />
+
+                                <!-- golden screw holes -->
+
+                                <circle cx="42" cy="24" r="4.2" fill="none" stroke="url(#m-gold)" stroke-width="1.4" />
+                                <circle cx="42" cy="106" r="4.2" fill="none" stroke="url(#m-gold)" stroke-width="1.4" />
+                                <circle cx="437" cy="24" r="4.2" fill="none" stroke="url(#m-gold)" stroke-width="1.4" />
+                                <circle cx="437" cy="106" r="4.2" fill="none" stroke="url(#m-gold)"
+                                    stroke-width="1.4" />
+
+                                <!-- ic rectangles -->
+
+                                <rect x="63" y="26" width="46" height="26" rx="3" fill="url(#m-chipdark)" />
+                                <rect x="63" y="76" width="38" height="22" rx="3" fill="url(#m-chipdark)" />
+                                <rect x="196" y="32" width="72" height="62" rx="6" fill="url(#m-chipdark)" />
+                                <rect x="300" y="26" width="50" height="24" rx="3" fill="url(#m-chipdark)" />
+                                <rect x="300" y="78" width="36" height="20" rx="3" fill="url(#m-chipdark)" />
+                                <rect x="378" y="46" width="34" height="30" rx="4" fill="url(#m-chipdark)" />
+                                <rect x="130" y="63" width="34" height="13" rx="4" fill="url(#m-chipdark)"></rect>
+
+                                <rect x="63" y="58" width="20" height="12" rx="3" fill="url(#m-chipwhite)"></rect>
+                                <rect x="130" y="85" width="32" height="14" rx="3" fill="url(#m-chipwhite)"></rect>
+                                <rect x="300" y="58" width="50" height="10" rx="3" fill="url(#m-chipwhite)"></rect>
+                                <rect x="140" y="28" width="20" height="30" rx="7" fill="url(#m-chipwhite)"></rect>
+                                <rect x="370" y="88" width="30" height="12" rx="3" fill="url(#m-chipwhite)"></rect>
+                                <rect x="380" y="28" width="20" height="12" rx="3" fill="url(#m-chipwhite)"></rect>
+                                <rect></rect>
+                            </svg>
+                        </div>
+
+                        <div class="back-group layer" id="backGroup">
+                            <div class="glass layer" id="glass"></div>
+                            <div class="camera layer" id="camera">
+                                <div class="main-row">
+                                    <span class="lens"></span>
+                                    <span class="lens"></span>
+                                </div>
+                                <span class="lens sub-row"></span>
                             </div>
-                            <span class="lens sub-row"></span>
                         </div>
                     </div>
                 </div>
@@ -57,13 +326,13 @@
             </div>
             <div class="chunk2 reveal">
                 <p><b>Assistenza 24/7 e veloce.</b><br> Il tempo è denaro, e i nostri clienti meritano il meglio. </p>
-                <img src = "img/macbook.jpg" alt="here goes another image">
+                <img src="img/macbook.jpg" alt="here goes another image">
             </div>
-            <div class ="chunk3 reveal">
+            <div class="chunk3 reveal">
                 <p><b>Prezzi ragionevoli.</b><br> La vostra soddisfazione è il nostro traguardo.</p>
-                <img src = "img/airpods.jpeg">
+                <img src="img/airpods.jpeg">
             </div>
-            <button class = "reservation-button reveal" id = "reservation">Organizza una riparazione </button>
+            <button class="reservation-button reveal" id="reservation">Organizza una riparazione </button>
         </section>
     </div>
     <div id="footer">
