@@ -10,6 +10,25 @@ const heroTitle = document.querySelector("#heroTitle");
 
 const heroWelcome = document.querySelector("#heroWelcome");
 
+function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+}
+
+function remap(position, start, end) {
+    return clamp((position - start) / (end - start), 0, 1);
+}
+
+function updateScale() {
+    let scale;
+    if (window.innerWidth < 480) {
+        scale = clamp(window.innerWidth / 480, 0.55, 1);
+    }
+    else {
+        scale = clamp(1 + (window.innerWidth - 480) / 4800, 1, 1.25);
+    }
+    phoneStage.style.transform = `scale(${scale.toFixed(2)})`;
+}
+
 function update(){
     const objectRectangle = explodeSection.getBoundingClientRect(); // returns the geometric rectangle in which an object is contained
     const total = objectRectangle.height - window.innerHeight // window.innerHeight returns the height in pixels of the viewport

@@ -1,21 +1,3 @@
-function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-}
-
-function remap(position, start, end) {
-    return clamp((position - start) / (end - start), 0, 1);
-}
-
-function updateScale() {
-    let scale;
-    if (window.innerWidth < 480) {
-        scale = clamp(window.innerWidth / 480, 0.55, 1);
-    }
-    else {
-        scale = clamp(1 + (window.innerWidth - 480) / 4800, 1, 1.25);
-    }
-    phoneStage.style.transform = `scale(${scale.toFixed(2)})`;
-}
 const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver((entries) => {
