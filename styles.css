@@ -7,8 +7,20 @@ body {
     height: 100%;
     width: 100%;
     color: white;
+    scrollbar-width: thin;
 
     font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+body ::selection {
+    background: #bbd9e5;
+    color: #000000;
+}
+
+body :focus-visible {
+    outline: 2px solid #bbd9e5;
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 /* NAV BAR */
@@ -52,72 +64,72 @@ body {
 /* HEADER */
 
 #header {
-    box-sizing: border-box;
-
-    height: 10vh;
-    min-height: 70px;
-
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    background-color: black;
+    gap: 1.5rem;
+    padding: 0.85rem clamp(1.25rem, 5vw, 3.5rem);
+    background: rgba(0, 0, 0, 0.62);
+    backdrop-filter: saturate(180%) blur(20px);
 
-    gap: 10px;
+    border-bottom: 1px solid rgba(245, 245, 247, 0.08);
 }
 
 #logos {
     display: flex;
-    width: 20%;
-    min-width: 70px;
+    align-items: center;
     cursor: pointer;
 }
 
 .logo {
-    margin: 10px 20px;
-    height: 100%;
+    height: 66px;
+    width: auto;
+    display: block;
     aspect-ratio: 1/1;
 }
 
 
 .quick-links {
-    padding: 0;
-    font-weight: bold;
-    margin-right: 30px;
-
-    box-sizing: border-box;
-
-    min-width: 30%;
-    width: 60%;
-    max-width: 300px;
-
-    color: white;
-
     display: flex;
-    justify-content: space-between;
-
-    gap: 5px;
+    align-items: center;
     list-style: none;
-}
 
-.quick-links>* {
-    align-self: center;
+    padding: 0;
+    margin: 0;
+    gap: clamp(1.25rem, 3vw, 2.25rem)
 }
 
 .quick-links a {
-    color: white;
-    text-underline-offset: 4px;
-    text-decoration-color: rgba(138, 140, 140, 0.776);
-    transition: color 0.3s ease;
+    position: relative;
+    color: rgba(245, 245, 247, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.01rem;
+    padding-block: 0.25rem;
+
+    transition: color 0.25s ease;
 }
 
-.quick-links a:hover {
-    color: rgb(158, 154, 154);
+.quick-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    height: 1px;
+    background: #bbd9e5;
+    transition: right 0.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#assistenza .quick-links,
-#chi-siamo .quick-links,
-#contattaci .quick-links {
-    justify-content: space-evenly;
+.quick-links a:hover,
+.quick-links a:focus-visible {
+    color: #ffff;
+}
+
+a:hover::after,
+a:focus-visible::after {
+    right: 0;
 }
 
 /* MAIN BODY */
@@ -553,6 +565,10 @@ body {
     flex-direction: column;
 }
 
+#assistenza .hero-content{
+    padding-top: clamp(3rem, 7vw, 5rem);
+}
+
 #assistenza .hero-title,
 #chi-siamo .hero-title {
     font-size: clamp(28px, 8vw, 50px);
@@ -975,20 +991,252 @@ body {
 
 /* CHI SIAMO PAGE */
 
-.body-chunks {
-    max-width: 700px;
-    min-width: 240px;
+#chi-siamo .body {
+    position: relative;
+    overflow: clip;
+}
+
+#chi-siamo .hero-content {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    min-height: clamp(180px, 14svh, 380px);
+    padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 6vw, 3.5rem);
+    isolation: isolate;
 }
 
-.body-chunks p {
-    text-align: left;
-    font-size: clamp(14px, 3.5vw, 20px);
-    line-height: 1.4;
+#chi-siamo .body-chunks {
+    display: flex;
+    flex-direction: column;
+    max-width: 1120px;
+    margin-inline: auto;
+    padding: 0 clamp(1.25rem, 6vw, 3.5rem) clamp(4rem, 8vw, 6rem);
 }
 
-.body-chunks[hidden] {
-    display: none;
+#chi-siamo .body-chunks>div[class^="chunk-"] {
+    padding-block: clamp(4.5rem, 9vw, 8rem);
+    ;
+}
+
+#chi-siamo .chunk-text {
+    max-width: 640px;
+    margin-inline: auto;
+}
+
+#chi-siamo .chunk-text p {
+    margin: 0;
+    font-size: clamp(1rem, 0.3vw + 1rem, 1.19rem);
+    line-height: 1.75;
+    color: rgba(245, 245, 247, 0.86);
+}
+
+#chi-siamo .chunk-text b {
+    color: white;
+    font-weight: 600;
+}
+
+#chi-siamo .chunk-1 .chunk-text p {
+    font-size: clamp(1.2rem, 0.5vw + 1.05rem, 1.4rem);
+    line-height: 1.65;
+    color: rgb(233, 225, 225);
+}
+
+#chi-siamo .chunk-with-media {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+#chi-siamo .chunk-with-media .chunk-text {
+    margin-inline: 0;
+    max-width: none;
+}
+
+#chi-siamo .chunk-media {
+    position: relative;
+    aspect-ratio: var(--cs-ratio, 4/5);
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(155deg, rgba(245, 245, 247, 0.07), rgba(245, 245, 247, 0.015));
+    border: 1px solid rgba(245, 245, 247, 0.6);
+    margin: 0;
+}
+
+#chi-siamo .chunk-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#chi-siamo .chunk-media:hover img {
+    transform: scale(1.03)
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        body#chi-siamo .chunk-with-media .chunk-media {
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            animation: cs-media-in linear both;
+            animation-timeline: view();
+            animation-range: entry 10% cover 40%;
+        }
+    }
+}
+
+@keyframes cs-media-in {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@media (width > 780px) {
+    body#chi-siamo .chunk-with-media--right {
+        grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    body#chi-siamo .chunk-with-media--left {
+        grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    body#chi-siamo .chunk-with-media--left .chunk-media {
+        order: -1;
+    }
+}
+
+#chi-siamo .trace-divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1px;
+    margin: 0;
+    opacity: 1;
+    transform-origin: center;
+}
+
+#chi-siamo .trace-line {
+    flex: 1 1 0;
+    width: 60%;
+    height: 1px;
+    max-width: 50%;
+    background: linear-gradient(90deg, transparent, rgba(245, 245, 247, 0.255) 40%, rgba(245, 245, 247, 0.186));
+}
+
+#chi-siamo .trace-divider .trace-line:last-child {
+    background: linear-gradient(90deg, rgba(245, 245, 247, 0.186), rgba(245, 245, 247, 0.255) 40%, transparent);
+}
+
+@supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+        body#chi-siamo .trace-divider {
+            animation: cs-trace-draw linear both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 35%;
+        }
+    }
+}
+
+@keyframes cs-trace-draw {
+    from {
+        opacity: 0;
+        transform: scaleX(0.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+#chi-siamo .cta-section {
+    position: relative;
+    isolation: isolate;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 3.5rem) clamp(5rem, 10vw, 8 rem);
+}
+
+#chi-siamo .cta-section::before {
+    content: "";
+    position: absolute;
+    inset: -30% -20%;
+    z-index: -1;
+}
+
+#chi-siamo .cta-title {
+    margin: 0 0 2rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: clamp(1.75rem, 1.6vw + 1.35rem, 2.75rem);
+
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+#chi-siamo .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+#chi-siamo .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.85rem;
+    border-radius: 980px;
+
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#chi-siamo .btn:hover {
+    transform: translateY(-2px);
+}
+
+#chi-siamo .btn:active {
+    transform: translateY(0);
+}
+
+#chi-siamo .btn-primary,
+#chi-siamo .btn-secondary {
+    background: rgb(251, 253, 255);
+    color: #000000;
+    border: 1px solid transparent;
+}
+
+#chi-siamo .btn-primary:hover,
+#chi-siamo .btn-secondary:hover {
+    background: rgba(237, 232, 232, 0.954);
+    box-shadow: 0 0 0 6px rgba(100, 210, 255, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #chi-siamo .btn {
+        transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    #chi-siamo .btn:hover {
+        transform: none;
+    }
 }
